@@ -2,7 +2,7 @@ export const portfolioData = {
   name: "백혜민",
   title: "UI/UX\n디자이너",
   subtitle: "다양한 경험을 통해 문제를 해결하는 디자이너",
-  description: "사용자의 방황을 확신으로 바꾸는 디자이너입니다. 15년 이상의 실무 경험을 바탕으로, 복잡함을 덜어내고 본질만 남기는 디자인을 지향합니다.",
+  description: "사용자의 방황을 확신으로 바꾸는 디자이너입니다.\n15년 이상의 실무 경험을 바탕으로, 복잡함을 덜어내고 본질만 남기는 디자인을 지향합니다.",
   email: "greymint100@gmail.com",
   phone: "010-4456-8284",
   

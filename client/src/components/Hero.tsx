@@ -57,7 +57,7 @@ export default function Hero({
           {/* Name and Description */}
           <motion.div variants={itemVariants} className="mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6">{name}</h2>
-            <p className="text-base sm:text-lg md:text-lg text-gray-700 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg md:text-lg text-gray-700 leading-relaxed max-w-2xl whitespace-pre-line">
               {description}
             </p>
           </motion.div>
