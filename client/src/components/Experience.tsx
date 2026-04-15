@@ -58,7 +58,7 @@ export default function Experience({ items }: ExperienceProps) {
               className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-gray-200 last:border-b-0"
             >
               <div className="sm:w-24 flex-shrink-0">
-                <span className="text-xs sm:text-sm font-semibold text-green-600">
+                <span className="text-xs sm:text-sm font-semibold text-mint-600">
                   {item.period}
                 </span>
               </div>

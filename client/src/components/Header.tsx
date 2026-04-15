@@ -31,7 +31,7 @@ export default function Header() {
             <motion.a
               key={item.label}
               href={item.href}
-              className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300"
+              className="text-gray-700 hover:text-mint-600 font-medium transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
@@ -62,7 +62,7 @@ export default function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-gray-700 hover:text-green-600 font-medium py-2 transition-colors"
+                className="block text-gray-700 hover:text-mint-600 font-medium py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

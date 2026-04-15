@@ -66,7 +66,7 @@ export default function Hero({
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center">
             <a
               href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-green-600 transition-colors duration-300 text-sm sm:text-base"
+              className="inline-flex items-center gap-2 sm:gap-3 text-gray-700 hover:text-mint-600 transition-colors duration-300 text-sm sm:text-base"
             >
               <Mail size={18} className="sm:w-5 sm:h-5" />
               <span className="font-medium truncate">{email}</span>
@@ -75,7 +75,7 @@ export default function Hero({
               href="/portfolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 bg-green-600 text-white hover:bg-green-700 transition-colors duration-300 rounded-lg text-sm sm:text-base font-medium"
+              className="inline-flex items-center gap-2 sm:gap-3 px-4 py-2 bg-mint-600 text-white hover:bg-mint-700 transition-colors duration-300 rounded-lg text-sm sm:text-base font-medium"
             >
               <FileText size={18} className="sm:w-5 sm:h-5" />
               <span>Portfolio PDF</span>

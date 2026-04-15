@@ -66,7 +66,7 @@ export default function Works({ projects }: WorksProps) {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
               selectedCategory === null
-                ? "bg-green-600 text-white"
+                ? "bg-mint-600 text-white"
                 : "bg-white text-gray-700 hover:bg-gray-100"
             }`}
           >
@@ -78,7 +78,7 @@ export default function Works({ projects }: WorksProps) {
               onClick={() => setSelectedCategory(category)}
               className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                 selectedCategory === category
-                  ? "bg-green-600 text-white"
+                  ? "bg-mint-600 text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -105,10 +105,10 @@ export default function Works({ projects }: WorksProps) {
               className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group"
             >
               <div className="mb-2 sm:mb-3 flex items-center justify-between">
-                <span className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
+                <span className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-mint-100 text-mint-700 text-xs font-semibold rounded-full">
                   {project.category}
                 </span>
-                <ExternalLink size={14} className="sm:w-4 sm:h-4 text-gray-400 group-hover:text-green-600 transition-colors" />
+                <ExternalLink size={14} className="sm:w-4 sm:h-4 text-gray-400 group-hover:text-mint-600 transition-colors" />
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1.5 sm:mb-2">
                 {project.title}

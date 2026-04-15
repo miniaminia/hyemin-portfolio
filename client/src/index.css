@@ -4,6 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-mint-100: #D9F2EE;
+  --color-mint-400: #5ECFBB;
+  --color-mint-600: #2DB79C;
+  --color-mint-700: #229380;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

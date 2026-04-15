@@ -61,7 +61,7 @@ export default function Contact({ email }: ContactProps) {
           <motion.a
             variants={itemVariants}
             href={`mailto:${email}`}
-            className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm sm:text-base md:text-lg"
+            className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-mint-400 transition-colors duration-300 text-sm sm:text-base md:text-lg"
           >
             <Mail size={20} className="sm:w-6 sm:h-6" />
             <span className="font-medium">{email}</span>
@@ -81,7 +81,7 @@ export default function Contact({ email }: ContactProps) {
             href="https://www.linkedin.com/in/hyemin-baek-253b62156/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 sm:p-3 bg-gray-800 hover:bg-green-600 rounded-full transition-colors duration-300"
+            className="p-2 sm:p-3 bg-gray-800 hover:bg-mint-600 rounded-full transition-colors duration-300"
             whileHover={{ scale: 1.1 }}
           >
             <Linkedin size={20} className="sm:w-6 sm:h-6" />
