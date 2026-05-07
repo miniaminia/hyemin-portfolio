@@ -35,6 +35,17 @@ interface HeroProps {
 export default function Hero({ name, description, email }: HeroProps) {
   const typedTitle = useTypewriter("UI/UX 디자이너", 80, 800);
   const isDone = typedTitle.length >= "UI/UX 디자이너".length;
+  const [showPhoto, setShowPhoto] = useState(false);
+  const [glitching, setGlitching] = useState(false);
+
+  const handleMouseEnter = () => {
+    setGlitching(true);
+    setTimeout(() => { setShowPhoto(true); setGlitching(false); }, 200);
+  };
+  const handleMouseLeave = () => {
+    setGlitching(true);
+    setTimeout(() => { setShowPhoto(false); setGlitching(false); }, 200);
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
@@ -139,18 +150,33 @@ export default function Hero({ name, description, email }: HeroProps) {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <div className="border border-[#1f521f] hover:border-[#00FF62] transition-colors duration-500 w-full max-w-xs sm:max-w-sm">
+          <div
+            className={`border transition-colors duration-500 w-full max-w-xs sm:max-w-sm cursor-pointer ${showPhoto ? 'border-[#00FF62]' : 'border-[#1f521f]'}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between">
-              <span className="text-[#00FF62] text-xs font-mono terminal-glow-sm">hero_visual.img</span>
+              <span className="text-[#00FF62] text-xs font-mono terminal-glow-sm">
+                {showPhoto ? 'hero_photo.img' : 'hero_visual.img'}
+              </span>
               <span className="text-[#1f521f] text-xs font-mono">[−][□][×]</span>
             </div>
-            <img
-              src="/images/hero_visual.jpg"
-              alt={name}
-              className="w-full block grayscale"
-            />
+            <div className={`relative ${glitching ? 'hover-glitch' : ''}`}>
+              <img
+                src="/images/hero_visual.jpg"
+                alt="hero visual"
+                className={`w-full block grayscale transition-opacity duration-150 ${showPhoto ? 'opacity-0' : 'opacity-100'}`}
+              />
+              <img
+                src="/images/hero_photo.jpg"
+                alt={name}
+                className={`absolute inset-0 w-full h-full object-cover grayscale transition-opacity duration-150 ${showPhoto ? 'opacity-100' : 'opacity-0'}`}
+              />
+            </div>
             <div className="bg-[#0a0a0a] px-3 py-1 border-t border-[#1f521f]">
-              <span className="text-[#1f521f] text-xs font-mono">[OK] 1 file loaded</span>
+              <span className="text-[#1f521f] text-xs font-mono">
+                {showPhoto ? '[OK] identity revealed' : '[OK] 1 file loaded'}
+              </span>
             </div>
           </div>
         </motion.div>
