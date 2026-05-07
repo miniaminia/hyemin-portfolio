@@ -51,11 +51,11 @@ export default function Hero({ name, description, email }: HeroProps) {
             transition={{ delay: 0.2 }}
           >
             <span className="text-[#1f521f]">greymint.kr:~$ </span>
-            <span className="text-[#ffb000] terminal-glow-amber">cat title.txt</span>
+            <span className="text-[#E5E7AD] terminal-glow-amber">cat title.txt</span>
           </motion.div>
 
           {/* Title typewriter */}
-          <div className="mb-6 text-[#33ff00] text-2xl sm:text-3xl md:text-4xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
+          <div className="mb-6 text-[#00FF62] text-2xl sm:text-3xl md:text-4xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
             {typedTitle}
             {!isDone && <span className="cursor-blink">█</span>}
             {isDone && <span className="cursor-blink">█</span>}
@@ -69,12 +69,12 @@ export default function Hero({ name, description, email }: HeroProps) {
             transition={{ delay: 0.4 }}
           >
             <span className="text-[#1f521f]">greymint.kr:~$ </span>
-            <span className="text-[#ffb000] terminal-glow-amber">whoami</span>
+            <span className="text-[#E5E7AD] terminal-glow-amber">whoami</span>
           </motion.div>
 
           {/* Name */}
           <motion.div
-            className="mb-6 text-[#33ff00] text-5xl sm:text-6xl md:text-7xl font-mono font-bold terminal-glow"
+            className="mb-6 text-[#00FF62] text-5xl sm:text-6xl md:text-7xl font-mono font-bold terminal-glow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -90,7 +90,7 @@ export default function Hero({ name, description, email }: HeroProps) {
             transition={{ delay: 0.5 }}
           >
             <span className="text-[#1f521f]">greymint.kr:~$ </span>
-            <span className="text-[#ffb000] terminal-glow-amber">cat about.txt</span>
+            <span className="text-[#E5E7AD] terminal-glow-amber">cat about.txt</span>
           </motion.div>
 
           {/* Description */}
@@ -101,7 +101,7 @@ export default function Hero({ name, description, email }: HeroProps) {
             transition={{ delay: 0.6 }}
           >
             {description.split("\n").map((line, i) => (
-              <p key={i} className="text-[#33ff00] text-sm font-mono leading-relaxed terminal-glow-sm">
+              <p key={i} className="text-[#00FF62] text-sm font-mono leading-relaxed terminal-glow-sm">
                 <span className="text-[#1f521f]">&gt; </span>{line}
               </p>
             ))}
@@ -116,7 +116,7 @@ export default function Hero({ name, description, email }: HeroProps) {
           >
             <a
               href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 px-4 py-2 border border-[#33ff00] text-[#33ff00] text-xs font-mono hover:bg-[#33ff00] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-[#00FF62] text-[#00FF62] text-xs font-mono hover:bg-[#00FF62] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-sm"
             >
               <Mail size={14} />
               [ SEND_MAIL ]
@@ -125,7 +125,7 @@ export default function Hero({ name, description, email }: HeroProps) {
               href="/portfolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-[#ffb000] text-[#ffb000] text-xs font-mono hover:bg-[#ffb000] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-amber"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-[#E5E7AD] text-[#E5E7AD] text-xs font-mono hover:bg-[#E5E7AD] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-amber"
             >
               <FileText size={14} />
               [ VIEW_PDF ]
@@ -140,9 +140,9 @@ export default function Hero({ name, description, email }: HeroProps) {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <div className="border border-[#1f521f] hover:border-[#33ff00] transition-colors duration-500 w-full max-w-xs sm:max-w-sm">
+          <div className="border border-[#1f521f] hover:border-[#00FF62] transition-colors duration-500 w-full max-w-xs sm:max-w-sm">
             <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between">
-              <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">hero_visual.img</span>
+              <span className="text-[#00FF62] text-xs font-mono terminal-glow-sm">hero_visual.img</span>
               <span className="text-[#1f521f] text-xs font-mono">[−][□][×]</span>
             </div>
             <img

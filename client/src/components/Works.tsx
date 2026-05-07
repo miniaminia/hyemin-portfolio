@@ -33,8 +33,8 @@ export default function Works({ projects }: WorksProps) {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <span className="text-[#ffb000] text-sm font-mono terminal-glow-amber">ls -la ./works/</span>
-          <div className="mt-3 text-[#33ff00] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+          <span className="text-[#E5E7AD] text-sm font-mono terminal-glow-amber">ls -la ./works/</span>
+          <div className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
             // WORKS
           </div>
         </motion.div>
@@ -51,8 +51,8 @@ export default function Works({ projects }: WorksProps) {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1 text-xs font-mono border transition-all duration-150 ${
               selectedCategory === null
-                ? "bg-[#33ff00] text-[#0a0a0a] border-[#33ff00]"
-                : "text-[#1f521f] border-[#1f521f] hover:border-[#33ff00] hover:text-[#33ff00]"
+                ? "bg-[#00FF62] text-[#0a0a0a] border-[#00FF62]"
+                : "text-[#1f521f] border-[#1f521f] hover:border-[#00FF62] hover:text-[#00FF62]"
             }`}
           >
             --all
@@ -63,8 +63,8 @@ export default function Works({ projects }: WorksProps) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3 py-1 text-xs font-mono border transition-all duration-150 ${
                 selectedCategory === cat
-                  ? "bg-[#33ff00] text-[#0a0a0a] border-[#33ff00]"
-                  : "text-[#1f521f] border-[#1f521f] hover:border-[#33ff00] hover:text-[#33ff00]"
+                  ? "bg-[#00FF62] text-[#0a0a0a] border-[#00FF62]"
+                  : "text-[#1f521f] border-[#1f521f] hover:border-[#00FF62] hover:text-[#00FF62]"
               }`}
             >
               --{cat.toLowerCase()}
@@ -84,19 +84,19 @@ export default function Works({ projects }: WorksProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: (index % 6) * 0.05 }}
               viewport={{ once: true }}
-              className="border border-[#1f521f] hover:border-[#33ff00] transition-all duration-200 group block hover-glitch"
+              className="border border-[#1f521f] hover:border-[#00FF62] transition-all duration-200 group block hover-glitch"
             >
               <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between group-hover:bg-[#1f521f] transition-colors duration-200">
-                <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#33ff00] transition-colors">
+                <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#00FF62] transition-colors">
                   [{project.category.toUpperCase()}]
                 </span>
-                <ExternalLink size={11} className="text-[#1f521f] group-hover:text-[#33ff00] transition-colors" />
+                <ExternalLink size={11} className="text-[#1f521f] group-hover:text-[#00FF62] transition-colors" />
               </div>
               <div className="p-4">
-                <h3 className="text-[#33ff00] text-sm font-mono font-bold mb-2 terminal-glow-sm leading-snug">
+                <h3 className="text-[#00FF62] text-sm font-mono font-bold mb-2 terminal-glow-sm leading-snug">
                   {project.title}
                 </h3>
-                <p className="text-[#1f521f] text-xs font-mono leading-relaxed group-hover:text-[#33ff00] transition-colors duration-200">
+                <p className="text-[#1f521f] text-xs font-mono leading-relaxed group-hover:text-[#00FF62] transition-colors duration-200">
                   {project.description}
                 </p>
               </div>

@@ -135,13 +135,13 @@
 .hover-glitch:hover { animation: glitch 0.35s ease-in-out; }
 
 .terminal-glow {
-  text-shadow: 0 0 6px rgba(51,255,0,0.55), 0 0 12px rgba(51,255,0,0.25);
+  text-shadow: 0 0 6px rgba(0,255,98,0.55), 0 0 12px rgba(0,255,98,0.25);
 }
 .terminal-glow-sm {
-  text-shadow: 0 0 4px rgba(51,255,0,0.4);
+  text-shadow: 0 0 4px rgba(0,255,98,0.4);
 }
 .terminal-glow-amber {
-  text-shadow: 0 0 6px rgba(255,176,0,0.5);
+  text-shadow: 0 0 6px rgba(229,231,173,0.5);
 }
 
 /* CRT scanline overlay */
@@ -172,7 +172,7 @@ body::after {
   }
   body {
     background-color: #0a0a0a;
-    color: #33ff00;
+    color: #00FF62;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

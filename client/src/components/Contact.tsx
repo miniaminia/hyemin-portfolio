@@ -18,21 +18,21 @@ export default function Contact({ email }: ContactProps) {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <span className="text-[#ffb000] text-sm font-mono terminal-glow-amber">./connect.sh</span>
-          <div className="mt-3 text-[#33ff00] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+          <span className="text-[#E5E7AD] text-sm font-mono terminal-glow-amber">./connect.sh</span>
+          <div className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
             // LET'S BUILD SOMETHING GREAT
           </div>
         </motion.div>
 
         <motion.div
-          className="border border-[#1f521f] max-w-2xl hover:border-[#33ff00] transition-colors duration-500"
+          className="border border-[#1f521f] max-w-2xl hover:border-[#00FF62] transition-colors duration-500"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="bg-[#0d2b0d] px-4 py-1.5 border-b border-[#1f521f] flex items-center gap-2">
-            <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">connect.sh</span>
+            <span className="text-[#00FF62] text-xs font-mono terminal-glow-sm">connect.sh</span>
             <span className="text-[#1f521f] text-xs font-mono ml-auto">[RUNNING]</span>
           </div>
 
@@ -47,7 +47,7 @@ export default function Contact({ email }: ContactProps) {
             <div className="border-t border-dashed border-[#1f521f] pt-4 space-y-2">
               <a
                 href={`mailto:${email}`}
-                className="flex items-center gap-3 text-[#33ff00] text-sm font-mono px-3 py-2 hover:bg-[#33ff00] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-sm group"
+                className="flex items-center gap-3 text-[#00FF62] text-sm font-mono px-3 py-2 hover:bg-[#00FF62] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-sm group"
               >
                 <Mail size={14} />
                 <span>$ mail {email}</span>
@@ -56,7 +56,7 @@ export default function Contact({ email }: ContactProps) {
                 href="https://www.linkedin.com/in/hyemin-baek-253b62156/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#1f521f] text-sm font-mono px-3 py-2 hover:bg-[#0d2b0d] hover:text-[#33ff00] transition-all duration-150 group"
+                className="flex items-center gap-3 text-[#1f521f] text-sm font-mono px-3 py-2 hover:bg-[#0d2b0d] hover:text-[#00FF62] transition-all duration-150 group"
               >
                 <Linkedin size={14} />
                 <span>$ open linkedin/hyemin-baek</span>
@@ -66,7 +66,7 @@ export default function Contact({ email }: ContactProps) {
 
           <div className="px-4 py-2 border-t border-[#1f521f] flex items-center gap-2">
             <span className="text-[#1f521f] text-xs font-mono">greymint.kr:~$</span>
-            <span className="cursor-blink text-[#33ff00] text-sm">█</span>
+            <span className="cursor-blink text-[#00FF62] text-sm">█</span>
           </div>
         </motion.div>
 
