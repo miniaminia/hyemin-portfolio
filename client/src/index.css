@@ -165,7 +165,10 @@ body::after {
     @apply border-border outline-ring/50;
   }
   html {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-family: 'Nanum Square Round', 'Apple SD Gothic Neo', sans-serif;
+  }
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
   }
   body {
     background-color: #0a0a0a;
