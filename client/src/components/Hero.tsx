@@ -43,12 +43,30 @@ export default function Hero({ name, description, email }: HeroProps) {
         {/* Left: Content */}
         <div>
 
-          {/* whoami prompt */}
+          {/* cat title prompt */}
           <motion.div
-            className="mb-3 text-xs font-mono"
+            className="mb-2 text-xs font-mono"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
+          >
+            <span className="text-[#1f521f]">greymint.kr:~$ </span>
+            <span className="text-[#ffb000] terminal-glow-amber">cat title.txt</span>
+          </motion.div>
+
+          {/* Title typewriter */}
+          <div className="mb-6 text-[#33ff00] text-5xl sm:text-6xl md:text-7xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
+            {typedTitle}
+            {!isDone && <span className="cursor-blink">█</span>}
+            {isDone && <span className="cursor-blink">█</span>}
+          </div>
+
+          {/* whoami prompt */}
+          <motion.div
+            className="mb-2 text-xs font-mono"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
           >
             <span className="text-[#1f521f]">greymint.kr:~$ </span>
             <span className="text-[#ffb000] terminal-glow-amber">whoami</span>
@@ -59,28 +77,10 @@ export default function Hero({ name, description, email }: HeroProps) {
             className="mb-6 text-[#33ff00] text-3xl sm:text-4xl font-mono font-bold terminal-glow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.5 }}
           >
             {name}
           </motion.div>
-
-          {/* cat title prompt */}
-          <motion.div
-            className="mb-2 text-xs font-mono"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
-          >
-            <span className="text-[#1f521f]">greymint.kr:~$ </span>
-            <span className="text-[#ffb000] terminal-glow-amber">cat title.txt</span>
-          </motion.div>
-
-          {/* Title typewriter */}
-          <div className="mb-8 text-[#33ff00] text-5xl sm:text-6xl md:text-7xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
-            {typedTitle}
-            {!isDone && <span className="cursor-blink">█</span>}
-            {isDone && <span className="cursor-blink">█</span>}
-          </div>
 
           {/* cat about prompt */}
           <motion.div
