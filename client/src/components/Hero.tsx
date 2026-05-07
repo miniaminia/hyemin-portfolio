@@ -33,8 +33,8 @@ interface HeroProps {
 }
 
 export default function Hero({ name, description, email }: HeroProps) {
-  const typedTitle = useTypewriter("UI/UX\n디자이너", 80, 800);
-  const isDone = typedTitle.length >= "UI/UX\n디자이너".length;
+  const typedTitle = useTypewriter("UI/UX 디자이너", 80, 800);
+  const isDone = typedTitle.length >= "UI/UX 디자이너".length;
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
