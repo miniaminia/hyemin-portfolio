@@ -83,14 +83,14 @@ export default function Hero({ name, description, email }: HeroProps) {
           </motion.div>
 
           {/* Name */}
-          <motion.div
+          <motion.h1
             className="mb-6 text-[#00FF62] text-5xl sm:text-6xl md:text-7xl font-mono font-bold terminal-glow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             {name}<span className="cursor-blink" style={{ position: 'relative', top: '-2px' }}>█</span>
-          </motion.div>
+          </motion.h1>
 
           {/* cat about prompt */}
           <motion.div

@@ -23,9 +23,9 @@ export default function Expertise({ items }: ExpertiseProps) {
           viewport={{ once: true }}
         >
           <span className="text-[#E5E7AD] text-sm font-mono terminal-glow-amber">cat capabilities.txt</span>
-          <div className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+          <h2 className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
             // PROBLEM-SOLVING SPECIALIST
-          </div>
+          </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

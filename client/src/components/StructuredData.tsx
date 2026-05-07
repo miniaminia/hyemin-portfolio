@@ -5,8 +5,8 @@ export function StructuredData() {
     "name": "백혜민",
     "alternateName": "Hyemin Baek",
     "url": "https://greymint.kr",
-    "image": "https://greymint.kr/images/profile.jpg",
-    "description": "15년 이상의 경험을 가진 UI/UX 디자이너. 금융, 플랫폼, 마케팅, 앱 디자인 전문.",
+    "image": "https://greymint.kr/images/hero_photo.jpg",
+    "description": "10년 이상의 경험을 가진 UI/UX 디자이너. 금융, 플랫폼, 앱, 마케팅 디자인 전문.",
     "jobTitle": "UI/UX 디자이너",
     "email": "greymint100@gmail.com",
     "sameAs": [

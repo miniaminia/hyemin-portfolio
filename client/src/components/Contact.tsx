@@ -19,9 +19,9 @@ export default function Contact({ email }: ContactProps) {
           viewport={{ once: true }}
         >
           <span className="text-[#E5E7AD] text-sm font-mono terminal-glow-amber">./connect.sh</span>
-          <div className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+          <h2 className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
             // LET'S BUILD SOMETHING GREAT
-          </div>
+          </h2>
         </motion.div>
 
         <motion.div

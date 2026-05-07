@@ -34,9 +34,9 @@ export default function Works({ projects }: WorksProps) {
           viewport={{ once: true }}
         >
           <span className="text-[#E5E7AD] text-sm font-mono terminal-glow-amber">ls -la ./works/</span>
-          <div className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+          <h2 className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
             // WORKS
-          </div>
+          </h2>
         </motion.div>
 
         {/* Filter */}

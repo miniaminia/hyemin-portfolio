@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
       
       {/* Add padding to account for fixed header */}
-      <div className="pt-16">
+      <main className="pt-16">
         <Hero
           name={portfolioData.name}
           title={portfolioData.title}
@@ -34,7 +34,7 @@ export default function Home() {
         </section>
 
         <Contact email={portfolioData.email} />
-      </div>
+      </main>
     </div>
   );
 }

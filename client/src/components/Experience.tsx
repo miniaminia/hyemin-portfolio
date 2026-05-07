@@ -24,9 +24,9 @@ export default function Experience({ items }: ExperienceProps) {
           viewport={{ once: true }}
         >
           <span className="text-[#E5E7AD] text-sm font-mono terminal-glow-amber">cat experience.log</span>
-          <div className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+          <h2 className="mt-3 text-[#00FF62] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
             // PROFESSIONAL EXPERIENCE
-          </div>
+          </h2>
         </motion.div>
 
         <div className="border border-[#1f521f]">
