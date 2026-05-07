@@ -78,7 +78,7 @@ export default function Hero({ name, description, email }: HeroProps) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {name}<span className="cursor-blink">█</span>
+            {name}<span className="cursor-blink" style={{ position: 'relative', top: '-2px' }}>█</span>
           </motion.div>
 
           {/* cat about prompt */}
