@@ -14,10 +14,6 @@ export function StructuredData() {
     },
     "description": "복잡함을 덜어내고 본질만 남기는 UI/UX 디자이너 백혜민. 삼성전자·하나은행·삼성증권 등 10년+ 프로젝트 경험.",
     "jobTitle": "UI/UX 디자이너",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "이모션글로벌"
-    },
     "email": "greymint100@gmail.com",
     "nationality": "KR",
     "sameAs": [
