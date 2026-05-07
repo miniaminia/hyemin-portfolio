@@ -48,8 +48,13 @@ export default function Experience({ items }: ExperienceProps) {
                 [{item.period}]
               </span>
               <span className="hidden sm:block text-[#1f521f] text-xs font-mono flex-shrink-0">····</span>
-              <span className="text-[#00FF62] text-sm font-mono font-bold flex-1 terminal-glow-sm">
-                {item.company}
+              <span className="relative flex-1 text-sm font-mono font-bold terminal-glow-sm inline-block">
+                <span className="text-[#00FF62] transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                  {item.company}
+                </span>
+                <span className="absolute inset-0 text-[#00FF62] tracking-widest transition-opacity duration-300 opacity-100 group-hover:opacity-0 select-none">
+                  {'█'.repeat(Math.max(4, Math.floor(item.company.length * 0.9)))}
+                </span>
               </span>
               <span className="hidden sm:block text-[#1f521f] text-xs font-mono flex-shrink-0">····</span>
               <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#00FF62] transition-colors sm:text-right">
