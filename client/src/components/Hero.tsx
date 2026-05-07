@@ -165,12 +165,12 @@ export default function Hero({ name, description, email }: HeroProps) {
               <img
                 src="/images/hero_visual.jpg"
                 alt="hero visual"
-                className={`w-full block grayscale transition-opacity duration-150 ${showPhoto ? 'opacity-0' : 'opacity-100'}`}
+                className={`w-full block grayscale transition-opacity duration-150 ${showPhoto ? 'opacity-0' : 'opacity-70'}`}
               />
               <img
                 src="/images/hero_photo.jpg"
                 alt={name}
-                className={`absolute inset-0 w-full h-full object-cover grayscale transition-opacity duration-150 ${showPhoto ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute inset-0 w-full h-full object-cover grayscale transition-opacity duration-150 ${showPhoto ? 'opacity-70' : 'opacity-0'}`}
               />
             </div>
             <div className="bg-[#0a0a0a] px-3 py-1 border-t border-[#1f521f]">
