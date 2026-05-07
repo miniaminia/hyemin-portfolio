@@ -7,13 +7,6 @@
   ],
   "headers": [
     {
-      "source": "/portfolio.pdf",
-      "headers": [
-        { "key": "Content-Disposition", "value": "inline; filename=\"portfolio.pdf\"" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
-    },
-    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
@@ -22,7 +15,17 @@
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; frame-src 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'self'; frame-ancestors 'none';"
+        }
+      ]
+    },
+    {
+      "source": "/portfolio.pdf",
+      "headers": [
+        { "key": "Content-Disposition", "value": "inline; filename=\"portfolio.pdf\"" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://www.greymint.kr https://greymint.kr;"
         }
       ]
     }
