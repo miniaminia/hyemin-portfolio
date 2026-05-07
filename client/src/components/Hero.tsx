@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, FileText } from "lucide-react";
+import PdfViewer from "./PdfViewer";
 
 function useTypewriter(text: string, speed = 70, delay = 600) {
   const [displayed, setDisplayed] = useState("");
@@ -36,6 +37,7 @@ export default function Hero({ name, description, email }: HeroProps) {
   const typedTitle = useTypewriter("UI/UX 디자이너", 80, 800);
   const isDone = typedTitle.length >= "UI/UX 디자이너".length;
   const [showPhoto, setShowPhoto] = useState(false);
+  const [pdfOpen, setPdfOpen] = useState(false);
   const [glitching, setGlitching] = useState(false);
 
   const handleMouseEnter = () => {
@@ -131,15 +133,14 @@ export default function Hero({ name, description, email }: HeroProps) {
               <Mail size={14} />
               [ SEND_MAIL ]
             </a>
-            <a
-              href="/portfolio.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setPdfOpen(true)}
               className="inline-flex items-center gap-2 px-4 py-2 border border-[#E5E7AD] text-[#E5E7AD] text-xs font-mono hover:bg-[#E5E7AD] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-amber"
             >
               <FileText size={14} />
               [ VIEW_PDF ]
-            </a>
+            </button>
+            <PdfViewer isOpen={pdfOpen} onClose={() => setPdfOpen(false)} />
           </motion.div>
         </div>
 
