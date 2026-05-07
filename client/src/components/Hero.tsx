@@ -55,7 +55,7 @@ export default function Hero({ name, description, email }: HeroProps) {
           </motion.div>
 
           {/* Title typewriter */}
-          <div className="mb-6 text-[#33ff00] text-5xl sm:text-6xl md:text-7xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
+          <div className="mb-6 text-[#33ff00] text-2xl sm:text-3xl md:text-4xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
             {typedTitle}
             {!isDone && <span className="cursor-blink">█</span>}
             {isDone && <span className="cursor-blink">█</span>}
@@ -74,7 +74,7 @@ export default function Hero({ name, description, email }: HeroProps) {
 
           {/* Name */}
           <motion.div
-            className="mb-6 text-[#33ff00] text-3xl sm:text-4xl font-mono font-bold terminal-glow"
+            className="mb-6 text-[#33ff00] text-5xl sm:text-6xl md:text-7xl font-mono font-bold terminal-glow"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
