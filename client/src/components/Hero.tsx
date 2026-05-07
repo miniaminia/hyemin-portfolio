@@ -38,10 +38,10 @@ export default function Hero({ name, description, email }: HeroProps) {
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
-      <div className="max-w-3xl w-full">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
         {/* Left: Content */}
-        <div>
+        <div className="order-2 md:order-1">
 
           {/* cat title prompt */}
           <motion.div
@@ -133,6 +133,28 @@ export default function Hero({ name, description, email }: HeroProps) {
           </motion.div>
         </div>
 
+        {/* Right: Profile Image */}
+        <motion.div
+          className="order-1 md:order-2 flex justify-center md:justify-end"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <div className="border border-[#1f521f] hover:border-[#33ff00] transition-colors duration-500 w-full max-w-xs sm:max-w-sm">
+            <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between">
+              <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">profile.img</span>
+              <span className="text-[#1f521f] text-xs font-mono">[−][□][×]</span>
+            </div>
+            <img
+              src="/images/profile.jpg"
+              alt={name}
+              className="w-full block grayscale"
+            />
+            <div className="bg-[#0a0a0a] px-3 py-1 border-t border-[#1f521f]">
+              <span className="text-[#1f521f] text-xs font-mono">[OK] 1 file loaded</span>
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>
