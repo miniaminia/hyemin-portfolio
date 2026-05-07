@@ -58,7 +58,6 @@ export default function Hero({ name, description, email }: HeroProps) {
           <div className="mb-6 text-[#00FF62] text-2xl sm:text-3xl md:text-4xl font-mono font-bold whitespace-pre-line leading-tight terminal-glow">
             {typedTitle}
             {!isDone && <span className="cursor-blink">█</span>}
-            {isDone && <span className="cursor-blink">█</span>}
           </div>
 
           {/* whoami prompt */}
@@ -79,7 +78,7 @@ export default function Hero({ name, description, email }: HeroProps) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {name}
+            {name}<span className="cursor-blink">█</span>
           </motion.div>
 
           {/* cat about prompt */}

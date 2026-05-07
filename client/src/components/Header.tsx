@@ -16,7 +16,6 @@ export default function Header() {
         <a href="#" className="font-mono text-sm flex items-center gap-1">
           <span className="text-[#E5E7AD] terminal-glow-amber">~/백혜민</span>
           <span className="text-[#1f521f]"> $</span>
-          <span className="cursor-blink text-[#00FF62] terminal-glow ml-1">█</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-1">
