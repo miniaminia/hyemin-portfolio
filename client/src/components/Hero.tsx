@@ -142,11 +142,11 @@ export default function Hero({ name, description, email }: HeroProps) {
         >
           <div className="border border-[#1f521f] hover:border-[#33ff00] transition-colors duration-500 w-full max-w-xs sm:max-w-sm">
             <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between">
-              <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">profile.img</span>
+              <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">hero_visual.img</span>
               <span className="text-[#1f521f] text-xs font-mono">[−][□][×]</span>
             </div>
             <img
-              src="/images/profile.jpg"
+              src="/images/hero_visual.jpg"
               alt={name}
               className="w-full block grayscale"
             />
