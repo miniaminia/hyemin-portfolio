@@ -17,7 +17,7 @@ export const portfolioData = {
     },
     {
       title: "금융 UI/UX 디자인 프로젝트 리드",
-      description: "대규모 금융 플랫폼 구축 프로젝트를 총괄하며, 디자이너 팀 리딩 및 효율적인 업무 프로세스 설계."
+      description: "금융 프로젝트 디자인을 총괄하며, 디자이너 팀 리딩 및 효율적인 업무 프로세스 설계."
     }
   ],
 
