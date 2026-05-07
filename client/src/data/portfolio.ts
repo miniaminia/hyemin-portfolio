@@ -8,7 +8,7 @@ export const portfolioData = {
   
   expertise: [
     {
-      title: "경험 풍부한 프로덕트 디자이너",
+      title: "10년 이상의 풍부한 경험의 프로덕트 디자이너",
       description: "UX/UI 디자인 실무 경험을 바탕으로 프로젝트를 수행하며, 사용자 중심의 직관적인 인터페이스 설계에 강점 보유"
     },
     {
