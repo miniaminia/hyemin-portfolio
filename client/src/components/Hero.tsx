@@ -48,7 +48,7 @@ export default function Hero({ name, description, email }: HeroProps) {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
+    <section className="min-h-screen flex items-center justify-center pt-10 pb-12 px-4">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
         {/* Left: Content */}
