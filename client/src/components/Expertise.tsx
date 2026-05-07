@@ -10,61 +10,57 @@ interface ExpertiseProps {
 }
 
 export default function Expertise({ items }: ExpertiseProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 }
-    }
-  };
-
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50">
+    <section className="py-16 px-4 border-t border-[#1f521f]">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12 md:mb-16"
+
+        <div className="mb-2 text-xs font-mono text-[#1f521f]">greymint.kr:~$</div>
+        <motion.div
+          className="mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Problem-Solving Specialist
-        </motion.h2>
+          <span className="text-[#ffb000] text-sm font-mono terminal-glow-amber">cat capabilities.txt</span>
+          <div className="mt-3 text-[#33ff00] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+            // PROBLEM-SOLVING SPECIALIST
+          </div>
+        </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {items.map((item, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              className="bg-white p-6 sm:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="border border-[#1f521f] hover:border-[#33ff00] transition-colors duration-300 group"
             >
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-gray-900">
-                {item.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                {item.description}
-              </p>
+              <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between group-hover:bg-[#1f521f] transition-colors duration-300">
+                <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">
+                  MODULE_{String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#33ff00]">[+][−][×]</span>
+              </div>
+              <div className="p-5">
+                <h3 className="text-[#33ff00] text-sm font-mono font-bold mb-3 terminal-glow-sm leading-snug">
+                  {item.title}
+                </h3>
+                <div className="border-t border-dashed border-[#1f521f] mb-3" />
+                <p className="text-[#1f521f] text-xs font-mono leading-relaxed group-hover:text-[#33ff00] transition-colors duration-300">
+                  {item.description}
+                </p>
+              </div>
+              <div className="px-3 py-1 border-t border-[#1f521f] flex items-center justify-between">
+                <span className="text-[#1f521f] text-xs font-mono">[STATUS: OK]</span>
+                <span className="text-[#1f521f] text-xs font-mono">{String(index + 1).padStart(2, "0")}/03</span>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

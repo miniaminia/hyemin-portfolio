@@ -6,101 +6,82 @@ interface ContactProps {
 }
 
 export default function Contact({ email }: ContactProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 bg-gray-900 text-white">
+    <section id="contact" className="py-16 px-4 border-t border-[#1f521f]">
       <div className="max-w-6xl mx-auto">
+
+        <div className="mb-2 text-xs font-mono text-[#1f521f]">greymint.kr:~$</div>
         <motion.div
-          className="text-center mb-8 sm:mb-10 md:mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
-          >
-            Let's build something great together.
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto"
-          >
-            새로운 프로젝트나 협업 기회에 대해 이야기하고 싶으신가요? 언제든지 연락주세요.
-          </motion.p>
+          <span className="text-[#ffb000] text-sm font-mono terminal-glow-amber">./connect.sh</span>
+          <div className="mt-3 text-[#33ff00] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+            // LET'S BUILD SOMETHING GREAT
+          </div>
         </motion.div>
 
-        {/* Contact Methods */}
         <motion.div
-          className="flex justify-center mb-8 sm:mb-10 md:mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="border border-[#1f521f] max-w-2xl hover:border-[#33ff00] transition-colors duration-500"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <motion.a
-            variants={itemVariants}
-            href={`mailto:${email}`}
-            className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-mint-400 transition-colors duration-300 text-sm sm:text-base md:text-lg"
-          >
-            <Mail size={20} className="sm:w-6 sm:h-6" />
-            <span className="font-medium">{email}</span>
-          </motion.a>
+          <div className="bg-[#0d2b0d] px-4 py-1.5 border-b border-[#1f521f] flex items-center gap-2">
+            <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">connect.sh</span>
+            <span className="text-[#1f521f] text-xs font-mono ml-auto">[RUNNING]</span>
+          </div>
+
+          <div className="p-6 space-y-3">
+            <p className="text-[#1f521f] text-sm font-mono">
+              &gt; 새로운 프로젝트나 협업 기회에 대해 이야기하고 싶으신가요?
+            </p>
+            <p className="text-[#1f521f] text-sm font-mono">
+              &gt; 언제든지 연락주세요.
+            </p>
+
+            <div className="border-t border-dashed border-[#1f521f] pt-4 space-y-2">
+              <a
+                href={`mailto:${email}`}
+                className="flex items-center gap-3 text-[#33ff00] text-sm font-mono px-3 py-2 hover:bg-[#33ff00] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-sm group"
+              >
+                <Mail size={14} />
+                <span>$ mail {email}</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hyemin-baek-253b62156/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-[#1f521f] text-sm font-mono px-3 py-2 hover:bg-[#0d2b0d] hover:text-[#33ff00] transition-all duration-150 group"
+              >
+                <Linkedin size={14} />
+                <span>$ open linkedin/hyemin-baek</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="px-4 py-2 border-t border-[#1f521f] flex items-center gap-2">
+            <span className="text-[#1f521f] text-xs font-mono">greymint.kr:~$</span>
+            <span className="cursor-blink text-[#33ff00] text-sm">█</span>
+          </div>
         </motion.div>
 
-        {/* Social Links */}
         <motion.div
-          className="flex justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.a
-            variants={itemVariants}
-            href="https://www.linkedin.com/in/hyemin-baek-253b62156/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 sm:p-3 bg-gray-800 hover:bg-mint-600 rounded-full transition-colors duration-300"
-            whileHover={{ scale: 1.1 }}
-          >
-            <Linkedin size={20} className="sm:w-6 sm:h-6" />
-          </motion.a>
-
-        </motion.div>
-
-        {/* Footer */}
-        <motion.div
-          className="border-t border-gray-800 pt-6 sm:pt-8 text-center text-gray-400"
+          className="mt-16 pt-6 border-t border-[#0d2b0d] text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs sm:text-sm">
-            © 2026 Hyemin Baek
+          <p className="text-[#1f521f] text-xs font-mono">
+            © 2026 백혜민 &nbsp;--&nbsp; [EOF]
           </p>
         </motion.div>
+
       </div>
     </section>
   );

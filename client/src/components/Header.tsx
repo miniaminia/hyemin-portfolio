@@ -1,75 +1,59 @@
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Works", href: "#works" },
-    { label: "Contact", href: "#contact" }
+    { label: "ABOUT", href: "#about" },
+    { label: "EXPERIENCE", href: "#experience" },
+    { label: "WORKS", href: "#works" },
+    { label: "CONTACT", href: "#contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <motion.a
-          href="#"
-          className="text-2xl font-bold text-gray-900"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-        >
-          HM
-        </motion.a>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a] border-b border-[#1f521f]">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#" className="font-mono text-sm flex items-center gap-1">
+          <span className="text-[#ffb000] terminal-glow-amber">~/백혜민</span>
+          <span className="text-[#1f521f]"> $</span>
+          <span className="cursor-blink text-[#33ff00] terminal-glow ml-1">█</span>
+        </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <motion.a
+            <a
               key={item.label}
               href={item.href}
-              className="text-gray-700 hover:text-mint-600 font-medium transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
+              className="text-[#33ff00] text-xs font-mono px-3 py-1.5 border border-transparent hover:border-[#33ff00] hover:bg-[#33ff00] hover:text-[#0a0a0a] transition-all duration-150 terminal-glow-sm"
             >
-              {item.label}
-            </motion.a>
+              [{item.label}]
+            </a>
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          className="md:hidden text-[#33ff00] text-xs font-mono px-3 py-1.5 border border-[#1f521f] hover:border-[#33ff00] hover:bg-[#33ff00] hover:text-[#0a0a0a] transition-all duration-150"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? "[CLOSE]" : "[MENU]"}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <motion.nav
-          className="md:hidden border-t border-gray-200 bg-white"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="px-4 py-4 space-y-3">
+        <nav className="md:hidden border-t border-[#1f521f] bg-[#0a0a0a]">
+          <div className="px-4 py-3 space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-gray-700 hover:text-mint-600 font-medium py-2 transition-colors"
+                className="flex items-center gap-2 text-[#33ff00] text-xs font-mono px-2 py-2 hover:bg-[#0d2b0d] transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                {item.label}
+                <span className="text-[#1f521f]">&gt;</span> {item.label}
               </a>
             ))}
           </div>
-        </motion.nav>
+        </nav>
       )}
     </header>
   );

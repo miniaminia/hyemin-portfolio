@@ -117,15 +117,59 @@
   --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
+/* ── Terminal animations ── */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes glitch {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-2px, 1px); clip-path: inset(20% 0 50% 0); }
+  40%  { transform: translate(2px, -1px); clip-path: inset(60% 0 10% 0); }
+  60%  { transform: translate(-1px, 2px); clip-path: inset(40% 0 30% 0); }
+  80%  { transform: translate(1px, -2px); }
+  100% { transform: translate(0); clip-path: none; }
+}
+
+.cursor-blink { animation: cursor-blink 1s step-end infinite; }
+.hover-glitch:hover { animation: glitch 0.35s ease-in-out; }
+
+.terminal-glow {
+  text-shadow: 0 0 6px rgba(51,255,0,0.55), 0 0 12px rgba(51,255,0,0.25);
+}
+.terminal-glow-sm {
+  text-shadow: 0 0 4px rgba(51,255,0,0.4);
+}
+.terminal-glow-amber {
+  text-shadow: 0 0 6px rgba(255,176,0,0.5);
+}
+
+/* CRT scanline overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 1px,
+    rgba(0,0,0,0.04) 1px,
+    rgba(0,0,0,0.04) 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   html {
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #0a0a0a;
+    color: #33ff00;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

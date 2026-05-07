@@ -16,109 +16,99 @@ interface WorksProps {
 export default function Works({ projects }: WorksProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const categories = Array.from(new Set(projects.map(p => p.category)));
+  const categories = Array.from(new Set(projects.map((p) => p.category)));
   const filteredProjects = selectedCategory
-    ? projects.filter(p => p.category === selectedCategory)
+    ? projects.filter((p) => p.category === selectedCategory)
     : projects;
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-gray-50">
+    <section className="py-16 px-4 border-t border-[#1f521f]">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          Works
-        </motion.h2>
 
-        {/* Category Filter */}
+        <div className="mb-2 text-xs font-mono text-[#1f521f]">greymint.kr:~$</div>
         <motion.div
-          className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10 md:mb-12"
-          initial={{ opacity: 0, y: 10 }}
+          className="mb-8"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
+          <span className="text-[#ffb000] text-sm font-mono terminal-glow-amber">ls -la ./works/</span>
+          <div className="mt-3 text-[#33ff00] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+            // WORKS
+          </div>
+        </motion.div>
+
+        {/* Filter */}
+        <motion.div
+          className="flex flex-wrap gap-2 mb-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
           <button
             onClick={() => setSelectedCategory(null)}
-            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+            className={`px-3 py-1 text-xs font-mono border transition-all duration-150 ${
               selectedCategory === null
-                ? "bg-mint-600 text-white"
-                : "bg-white text-gray-700 hover:bg-gray-100"
+                ? "bg-[#33ff00] text-[#0a0a0a] border-[#33ff00]"
+                : "text-[#1f521f] border-[#1f521f] hover:border-[#33ff00] hover:text-[#33ff00]"
             }`}
           >
-            All
+            --all
           </button>
-          {categories.map(category => (
+          {categories.map((cat) => (
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-mint-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-3 py-1 text-xs font-mono border transition-all duration-150 ${
+                selectedCategory === cat
+                  ? "bg-[#33ff00] text-[#0a0a0a] border-[#33ff00]"
+                  : "text-[#1f521f] border-[#1f521f] hover:border-[#33ff00] hover:text-[#33ff00]"
               }`}
             >
-              {category}
+              --{cat.toLowerCase()}
             </button>
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredProjects.map((project, index) => (
             <motion.a
-              key={index}
+              key={`${project.title}-${index}`}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              variants={itemVariants}
-              className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer group"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: (index % 6) * 0.05 }}
+              viewport={{ once: true }}
+              className="border border-[#1f521f] hover:border-[#33ff00] transition-all duration-200 group block hover-glitch"
             >
-              <div className="mb-2 sm:mb-3 flex items-center justify-between">
-                <span className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-mint-100 text-mint-700 text-xs font-semibold rounded-full">
-                  {project.category}
+              <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between group-hover:bg-[#1f521f] transition-colors duration-200">
+                <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#33ff00] transition-colors">
+                  [{project.category.toUpperCase()}]
                 </span>
-                <ExternalLink size={14} className="sm:w-4 sm:h-4 text-gray-400 group-hover:text-mint-600 transition-colors" />
+                <ExternalLink size={11} className="text-[#1f521f] group-hover:text-[#33ff00] transition-colors" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1.5 sm:mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                {project.description}
-              </p>
+              <div className="p-4">
+                <h3 className="text-[#33ff00] text-sm font-mono font-bold mb-2 terminal-glow-sm leading-snug">
+                  {project.title}
+                </h3>
+                <p className="text-[#1f521f] text-xs font-mono leading-relaxed group-hover:text-[#33ff00] transition-colors duration-200">
+                  {project.description}
+                </p>
+              </div>
             </motion.a>
           ))}
-        </motion.div>
+        </div>
+
+        <div className="mt-6 text-[#1f521f] text-xs font-mono">
+          &gt; {filteredProjects.length} results found
+          <span className="cursor-blink ml-1">_</span>
+        </div>
+
       </div>
     </section>
   );

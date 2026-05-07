@@ -11,66 +11,58 @@ interface ExperienceProps {
 }
 
 export default function Experience({ items }: ExperienceProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4">
+    <section className="py-16 px-4 border-t border-[#1f521f]">
       <div className="max-w-6xl mx-auto">
-        <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12 md:mb-16"
+
+        <div className="mb-2 text-xs font-mono text-[#1f521f]">greymint.kr:~$</div>
+        <motion.div
+          className="mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Professional Experience
-        </motion.h2>
+          <span className="text-[#ffb000] text-sm font-mono terminal-glow-amber">cat experience.log</span>
+          <div className="mt-3 text-[#33ff00] text-2xl sm:text-3xl font-mono font-bold terminal-glow">
+            // PROFESSIONAL EXPERIENCE
+          </div>
+        </motion.div>
 
-        <motion.div
-          className="space-y-4 sm:space-y-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="border border-[#1f521f]">
+          <div className="bg-[#0d2b0d] px-4 py-1.5 border-b border-[#1f521f] flex items-center justify-between">
+            <span className="text-[#33ff00] text-xs font-mono terminal-glow-sm">experience.log</span>
+            <span className="text-[#1f521f] text-xs font-mono">{items.length} entries</span>
+          </div>
+
           {items.map((item, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-gray-200 last:border-b-0"
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 px-4 py-3 border-b border-[#0d2b0d] last:border-b-0 hover:bg-[#0d2b0d] transition-colors duration-150 group"
             >
-              <div className="sm:w-24 flex-shrink-0">
-                <span className="text-xs sm:text-sm font-semibold text-mint-600">
-                  {item.period}
-                </span>
-              </div>
-              <div className="flex-grow">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900">
-                  {item.company}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600">{item.position}</p>
-              </div>
+              <span className="text-[#ffb000] text-xs font-mono w-32 flex-shrink-0 terminal-glow-amber">
+                [{item.period}]
+              </span>
+              <span className="hidden sm:block text-[#1f521f] text-xs font-mono flex-shrink-0">····</span>
+              <span className="text-[#33ff00] text-sm font-mono font-bold flex-1 terminal-glow-sm">
+                {item.company}
+              </span>
+              <span className="hidden sm:block text-[#1f521f] text-xs font-mono flex-shrink-0">····</span>
+              <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#33ff00] transition-colors sm:text-right">
+                {item.position}
+              </span>
             </motion.div>
           ))}
-        </motion.div>
+
+          <div className="px-4 py-2 bg-[#0d2b0d]">
+            <span className="text-[#1f521f] text-xs font-mono">-- END OF FILE --</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );
