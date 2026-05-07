@@ -24,6 +24,7 @@ export function StructuredData() {
     ]
   };
 
+  // JSON.stringify on a static object is safe — no user input involved
   return (
     <script
       type="application/ld+json"
