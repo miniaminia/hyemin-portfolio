@@ -48,7 +48,7 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
 
           {/* PDF iframe — #toolbar=0 hides Chrome's download button */}
           <iframe
-            src="/portfolio.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+            src="https://greymint.kr/portfolio.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
             className="flex-1 w-full border-0"
             title="포트폴리오 PDF"
           />
