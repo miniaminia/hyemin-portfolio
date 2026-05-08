@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -21,7 +21,11 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const blockContextMenu = (e: React.MouseEvent) => e.preventDefault();
+  const forwardScroll = (e: React.WheelEvent) => {
+    iframeRef.current?.contentWindow?.scrollBy({ top: e.deltaY, behavior: "instant" as ScrollBehavior });
+  };
 
   return (
     <AnimatePresence>
@@ -52,6 +56,7 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
           {/* PDF iframe — #toolbar=0 hides Chrome's download button */}
           <div className="relative flex-1">
             <iframe
+              ref={iframeRef}
               src="https://www.greymint.kr/portfolio.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
               className="w-full h-full border-0"
               title="포트폴리오 PDF"
@@ -59,6 +64,7 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
             <div
               className="absolute inset-0 z-10"
               onContextMenu={blockContextMenu}
+              onWheel={forwardScroll}
             />
           </div>
 
