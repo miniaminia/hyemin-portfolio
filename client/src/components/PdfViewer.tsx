@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const TOTAL_PAGES = 19;
-const getPageUrl = (n: number) =>
-  `/portfolio/page-${String(n).zfill ? String(n).padStart(2, "0") : String(n).padStart(2, "0")}.jpg`;
+const getPageUrl = (n: number) => `/portfolio/page-${String(n).padStart(2, "0")}.jpg`;
 
 interface PdfViewerProps {
   isOpen: boolean;
@@ -12,29 +11,9 @@ interface PdfViewerProps {
 }
 
 export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
-  const [page, setPage] = useState(1);
-
-  // Preload adjacent pages
   useEffect(() => {
-    if (!isOpen) return;
-    [page - 1, page, page + 1].forEach((p) => {
-      if (p >= 1 && p <= TOTAL_PAGES) {
-        const img = new Image();
-        img.src = getPageUrl(p);
-      }
-    });
-  }, [isOpen, page]);
-
-  useEffect(() => {
-    if (!isOpen) { setPage(1); return; }
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight" || e.key === "ArrowDown")
-        setPage(p => Math.min(p + 1, TOTAL_PAGES));
-      if (e.key === "ArrowLeft" || e.key === "ArrowUp")
-        setPage(p => Math.max(p - 1, 1));
-    };
-    document.addEventListener("keydown", handleKey);
+    const handleKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    if (isOpen) document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
   }, [isOpen, onClose]);
 
@@ -70,37 +49,29 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
             </button>
           </div>
 
-          {/* Image viewer */}
-          <div className="flex-1 overflow-auto flex justify-center items-start bg-[#0a0a0a] p-4" onContextMenu={block}>
-            <img
-              key={page}
-              src={getPageUrl(page)}
-              alt={`포트폴리오 ${page}페이지`}
-              className="max-w-full max-h-full object-contain shadow-lg select-none"
-              onContextMenu={block}
-              draggable={false}
-            />
+          {/* Scroll viewer */}
+          <div
+            className="flex-1 overflow-y-auto bg-[#0a0a0a] py-6"
+            onContextMenu={block}
+          >
+            <div className="flex flex-col items-center gap-2 w-full max-w-3xl mx-auto px-4">
+              {Array.from({ length: TOTAL_PAGES }, (_, i) => i + 1).map((n) => (
+                <img
+                  key={n}
+                  src={getPageUrl(n)}
+                  alt={`포트폴리오 ${n}페이지`}
+                  className="w-full block select-none shadow-md shadow-[#1f521f]/20"
+                  onContextMenu={block}
+                  draggable={false}
+                  loading={n <= 2 ? "eager" : "lazy"}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Footer */}
-          <div className="px-4 py-2 border-t border-[#1f521f] bg-[#0a0a0a] flex items-center justify-between flex-shrink-0">
-            <span className="text-[#1f521f] text-xs font-mono">[READ-ONLY]</span>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setPage(p => Math.max(p - 1, 1))}
-                disabled={page <= 1}
-                className="text-[#1f521f] hover:text-[#00FF62] disabled:opacity-30 transition-colors text-xs font-mono"
-              >[PREV]</button>
-              <span className="text-[#1f521f] text-xs font-mono">
-                {String(page).padStart(2, "0")} / {String(TOTAL_PAGES).padStart(2, "0")}
-              </span>
-              <button
-                onClick={() => setPage(p => Math.min(p + 1, TOTAL_PAGES))}
-                disabled={page >= TOTAL_PAGES}
-                className="text-[#1f521f] hover:text-[#00FF62] disabled:opacity-30 transition-colors text-xs font-mono"
-              >[NEXT]</button>
-            </div>
-            <span className="text-[#1f521f] text-xs font-mono hidden sm:block">← → 키로 이동</span>
+          <div className="px-4 py-1.5 border-t border-[#1f521f] bg-[#0a0a0a] flex-shrink-0">
+            <span className="text-[#1f521f] text-xs font-mono">[READ-ONLY] portfolio · {TOTAL_PAGES} pages</span>
           </div>
         </motion.div>
       )}
