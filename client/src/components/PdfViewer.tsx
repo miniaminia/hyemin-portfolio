@@ -50,12 +50,17 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
           </div>
 
           {/* PDF iframe — #toolbar=0 hides Chrome's download button */}
-          <iframe
-            src="https://www.greymint.kr/portfolio.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-            className="flex-1 w-full border-0"
-            title="포트폴리오 PDF"
-            onContextMenu={blockContextMenu}
-          />
+          <div className="relative flex-1">
+            <iframe
+              src="https://www.greymint.kr/portfolio.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+              className="w-full h-full border-0"
+              title="포트폴리오 PDF"
+            />
+            <div
+              className="absolute inset-0 z-10"
+              onContextMenu={blockContextMenu}
+            />
+          </div>
 
           <div className="px-4 py-1.5 border-t border-[#1f521f] bg-[#0a0a0a] flex-shrink-0">
             <span className="text-[#1f521f] text-xs font-mono">[READ-ONLY] portfolio.pdf</span>
