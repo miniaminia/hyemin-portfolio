@@ -35,7 +35,7 @@ export function StructuredData() {
     "name": "백혜민 | UI/UX 디자이너 포트폴리오",
     "description": "복잡함을 덜어내고 본질만 남기는 UI/UX 디자이너 백혜민의 포트폴리오.",
     "inLanguage": "ko",
-    "dateModified": "2026-05-07",
+    "dateModified": "2026-05-07T00:00:00+09:00",
     "mainEntity": { "@id": "https://www.greymint.kr/#person" },
     "about": { "@id": "https://www.greymint.kr/#person" },
     "breadcrumb": {

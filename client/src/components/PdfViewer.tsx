@@ -21,6 +21,8 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
+  const blockContextMenu = (e: React.MouseEvent) => e.preventDefault();
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -30,6 +32,7 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
+          onContextMenu={blockContextMenu}
         >
           {/* Terminal header */}
           <div className="flex items-center justify-between px-4 py-2 bg-[#0d2b0d] border-b border-[#1f521f] flex-shrink-0">
@@ -51,6 +54,7 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
             src="https://www.greymint.kr/portfolio.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
             className="flex-1 w-full border-0"
             title="포트폴리오 PDF"
+            onContextMenu={blockContextMenu}
           />
 
           <div className="px-4 py-1.5 border-t border-[#1f521f] bg-[#0a0a0a] flex-shrink-0">
