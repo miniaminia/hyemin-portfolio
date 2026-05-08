@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TOTAL_PAGES = 20;
+const TOTAL_PAGES = 19;
 const getPageUrl = (n: number) =>
   `/portfolio/page-${String(n).zfill ? String(n).padStart(2, "0") : String(n).padStart(2, "0")}.jpg`;
 
