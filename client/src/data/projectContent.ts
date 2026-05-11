@@ -3,6 +3,7 @@ export interface ProjectContent {
   goals: string[];
   solution: string[];
   results: string[];
+  images: string[];
 }
 
 export const projectContent: ProjectContent[] = [
@@ -25,6 +26,7 @@ export const projectContent: ProjectContent[] = [
       "교사와 관리자가 필요로 하는 반·그룹 단위 관리 UX 제공",
       "직관적인 아이콘 시스템으로 학습 곡선 최소화",
     ],
+    images: ["/projects/0/img-0.png", "/projects/0/img-1.png", "/projects/0/img-2.png", "/projects/0/img-3.png"],
   },
 
   // 1. 라온시큐어 온리원 뱃지 사이트 구축
@@ -45,6 +47,7 @@ export const projectContent: ProjectContent[] = [
       "각 집단이 직관적이고 효율적으로 시스템을 사용할 수 있는 환경 구현",
       "권한 구조가 복잡한 SaaS 플랫폼을 명확한 UX로 풀어낸 사례",
     ],
+    images: ["/projects/1/img-0.png", "/projects/1/img-1.png", "/projects/1/img-2.png", "/projects/1/img-3.png", "/projects/1/img-4.png"],
   },
 
   // 2. 삼성전자 Global CRM
@@ -65,6 +68,7 @@ export const projectContent: ProjectContent[] = [
       "포토샵 레이어 관리 체계 구축으로 이후 유사 작업 효율 향상",
       "글로벌 다국어 뉴스레터 운영 경험 확보",
     ],
+    images: ["/projects/2/img-0.png", "/projects/2/img-1.png"],
   },
 
   // 3. 한국투자 저축은행 이벤트 제안
@@ -85,6 +89,7 @@ export const projectContent: ProjectContent[] = [
       "신규 브랜드 이미지 수립을 위한 비주얼 방향성 제시",
       "B2C 커뮤니케이션 전환 제안 작업을 효과적으로 완료",
     ],
+    images: ["/projects/3/img-0.png"],
   },
 
   // 4. 콴텍 머니포트 앱
@@ -105,6 +110,7 @@ export const projectContent: ProjectContent[] = [
       "신한은행·국민은행과의 사업 협력 계약 체결",
       "고객 이탈률 감소 및 앱 사용성에 대한 긍정적 피드백 확보",
     ],
+    images: ["/projects/4/img-0.png"],
   },
 
   // 5. 삼성전자 글로벌 홀리데이 배너 디자인
@@ -125,6 +131,7 @@ export const projectContent: ProjectContent[] = [
       "글로벌 시장 마케팅 효과를 극대화하는 홀리데이 캠페인 비주얼 제공",
       "대규모 배너 프로젝트 운영 경험 및 글로벌 협업 역량 강화",
     ],
+    images: ["/projects/5/img-0.png", "/projects/5/img-1.png"],
   },
 
   // 6. 하나은행 머니수첩
@@ -145,6 +152,7 @@ export const projectContent: ProjectContent[] = [
       "고객사로부터 정보 전달 효율성에 대한 긍정적 피드백 수령",
       "Android·iOS 이중 플랫폼 디자인 PL 경험 확보",
     ],
+    images: ["/projects/6/img-0.jpg", "/projects/6/img-1.jpg"],
   },
 
   // 7. 미래에셋대우 디지털마케팅 제안
@@ -165,6 +173,7 @@ export const projectContent: ProjectContent[] = [
       "다채널 적용 가능한 모듈형 템플릿 설계로 운영 효율 향상",
       "브랜드 일관성을 유지하며 디지털 환경에 최적화된 디자인 완성",
     ],
+    images: ["/projects/7/img-0.jpg", "/projects/7/img-1.jpg"],
   },
 
   // 8. 이케아 뉴스레터
@@ -185,6 +194,7 @@ export const projectContent: ProjectContent[] = [
       "모듈형 구조로 다양한 시즌 콘텐츠에 유연하게 대응 가능한 템플릿 구축",
       "일관된 브랜드 경험 제공으로 구독자 신뢰도 향상",
     ],
+    images: ["/projects/8/img-0.jpg", "/projects/8/img-1.jpg"],
   },
 
   // 9. 아큐브 비타난시 프로모션
@@ -205,6 +215,7 @@ export const projectContent: ProjectContent[] = [
       "시각적 완성도를 통해 브랜드 프리미엄 이미지 강화",
       "신제품 출시 초기 소비자 인지도 향상에 기여",
     ],
+    images: ["/projects/9/img-0.jpg", "/projects/9/img-1.jpg"],
   },
 
   // 10. 삼성증권 팝투데이/퇴직연금 뉴스레터
@@ -225,6 +236,7 @@ export const projectContent: ProjectContent[] = [
       "퇴직연금 뉴스레터는 고객 이해도 향상에 대한 긍정적 평가 수령",
       "템플릿화를 통해 지속적인 운영 효율성 확보",
     ],
+    images: ["/projects/10/img-0.jpg", "/projects/10/img-1.jpg", "/projects/10/img-2.jpg", "/projects/10/img-3.jpg"],
   },
 
   // 11. 삼성증권 MY캐시쿠폰
@@ -245,6 +257,7 @@ export const projectContent: ProjectContent[] = [
       "포인트 적립 시스템을 효과적으로 전달하는 디자인으로 이벤트 목표 달성",
       "금융 서비스 진입 장벽 완화에 기여",
     ],
+    images: ["/projects/11/img-0.jpg"],
   },
 
   // 12. JB 금융그룹 디자인 컨설팅
@@ -265,6 +278,7 @@ export const projectContent: ProjectContent[] = [
       "스케치→피그마 전환으로 파일 관리 효율성과 팀 협업 속도 향상",
       "일관된 디자인 시스템으로 서비스 전반의 브랜드 통일성 강화",
     ],
+    images: ["/projects/12/img-0.png", "/projects/12/img-1.png", "/projects/12/img-2.png", "/projects/12/img-3.png"],
   },
 
   // 13. 아큐브 큐브 로얄티프로그램
@@ -285,6 +299,7 @@ export const projectContent: ProjectContent[] = [
       "복잡한 포인트 시스템을 누구나 쉽게 이해할 수 있는 정보 설계 달성",
       "브랜드 일관성을 유지하면서 멤버십 특화 경험 설계 완료",
     ],
+    images: ["/projects/13/img-0.jpg", "/projects/13/img-1.jpg", "/projects/13/img-2.jpg"],
   },
 
   // 14. CGN OTT 퐁당 사이트 리뉴얼
@@ -305,6 +320,7 @@ export const projectContent: ProjectContent[] = [
       "콘텐츠 탐색 편의성 향상으로 체류 시간 증가 기대",
       "브랜드 이미지 현대화 및 신규 사용자 유입 환경 개선",
     ],
+    images: ["/projects/14/img-0.png", "/projects/14/img-1.png", "/projects/14/img-2.png"],
   },
 
   // 15. KB 손해보험 뉴스레터 리뉴얼
@@ -325,6 +341,7 @@ export const projectContent: ProjectContent[] = [
       "모듈화된 템플릿으로 5년간 뉴스레터를 효율적으로 운영",
       "업계 트렌드를 선도하는 뉴스레터 리뉴얼 완성",
     ],
+    images: ["/projects/15/img-0.jpg", "/projects/15/img-1.jpg"],
   },
 
   // 16. LIG 손해보험 계약고객 이벤트
@@ -345,6 +362,7 @@ export const projectContent: ProjectContent[] = [
       "인터랙티브 방식으로 고객 브랜드 경험의 질 향상",
       "보험 고객과의 지속적인 접점 형성으로 브랜드 충성도 강화",
     ],
+    images: ["/projects/16/img-0.jpg"],
   },
 
   // 17. 아큐브 디파인 프로모션
@@ -365,6 +383,7 @@ export const projectContent: ProjectContent[] = [
       "타깃 소비자 대상 제품 인지도 향상에 기여",
       "구매 전환을 유도하는 직관적인 CTA 흐름 구현",
     ],
+    images: ["/projects/17/img-0.jpg"],
   },
 
   // 18. 하나은행 큰글씨 모드
@@ -385,6 +404,7 @@ export const projectContent: ProjectContent[] = [
       "CMS 사용자의 업무 일정 관리 효율성 향상 및 긍정적 피드백 수령",
       "접근성 강화 UI 설계 역량과 기업용 내부 시스템 디자인 경험 확보",
     ],
+    images: ["/projects/18/img-0.jpg", "/projects/18/img-1.jpg", "/projects/18/img-2.jpg"],
   },
 
   // 19. 고어텍스 프로모션
@@ -405,6 +425,7 @@ export const projectContent: ProjectContent[] = [
       "기술 중심 브랜드를 감성적으로 전달하는 비주얼 커뮤니케이션 구현",
       "시즌 프로모션 목표 달성을 위한 효과적인 디자인 지원",
     ],
+    images: ["/projects/19/img-0.jpg", "/projects/19/img-1.jpg", "/projects/19/img-2.jpg", "/projects/19/img-3.jpg"],
   },
 
   // 20. 동아제약 국토대장정
@@ -425,6 +446,7 @@ export const projectContent: ProjectContent[] = [
       "캠페인 참가 지원 유도에 기여하는 직관적인 페이지 설계",
       "브랜드 호감도 향상을 위한 감성적 비주얼 커뮤니케이션 구현",
     ],
+    images: ["/projects/20/img-0.jpg"],
   },
 
   // 21. 라로슈포제 프로모션
@@ -445,6 +467,7 @@ export const projectContent: ProjectContent[] = [
       "클린한 비주얼로 프리미엄 더마코스메틱 브랜드 이미지 강화",
       "소비자 이해도와 구매 의향 향상에 기여",
     ],
+    images: ["/projects/21/img-0.jpg", "/projects/21/img-1.jpg"],
   },
 
   // 22. 미래에셋대우 디지털 마케팅
@@ -465,6 +488,7 @@ export const projectContent: ProjectContent[] = [
       "모듈형 설계로 다양한 캠페인에 효율적으로 적용 가능한 템플릿 구축",
       "디지털 마케팅 성과 향상에 기여하는 고품질 비주얼 제작",
     ],
+    images: ["/projects/22/img-0.png", "/projects/22/img-1.png"],
   },
 
   // 23. 슈에무라 프로모션
@@ -485,6 +509,7 @@ export const projectContent: ProjectContent[] = [
       "국내 뷰티 소비자의 감성에 맞춘 아트 디렉팅으로 브랜드 호감도 향상",
       "시즌 컬렉션 출시 초기 고객 관심도 향상에 기여",
     ],
+    images: ["/projects/23/img-0.jpg", "/projects/23/img-1.jpg"],
   },
 
   // 24. 디자이너 부트캠프 팀 프로젝트 진행
@@ -505,5 +530,6 @@ export const projectContent: ProjectContent[] = [
       "실무 중심 교육 방식으로 수강생 만족도 향상",
       "UX/UI 교육 분야에서의 강의·멘토링 역량 검증",
     ],
+    images: [],
   },
 ];

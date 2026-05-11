@@ -80,11 +80,31 @@ export default function ProjectDetail() {
           </div>
         </motion.div>
 
+        {/* Images */}
+        {content.images.length > 0 && (
+          <motion.div
+            className="mb-10 space-y-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {content.images.map((src, idx) => (
+              <div key={idx} className="border border-[#1f521f] hover:border-[#00FF62] transition-colors duration-300">
+                <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between">
+                  <span className="text-[#00FF62] text-xs font-mono terminal-glow-sm">image-{String(idx + 1).padStart(2, "0")}.png</span>
+                  <span className="text-[#1f521f] text-xs font-mono">[−][□][×]</span>
+                </div>
+                <img src={src} alt={`${project.title} ${idx + 1}`} className="w-full block" loading={idx === 0 ? "eager" : "lazy"} />
+              </div>
+            ))}
+          </motion.div>
+        )}
+
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.3 }}
         >
           <Section label="프로젝트 개요">
             <p className="flex gap-2 text-sm font-mono text-[#9fffce] leading-relaxed">
