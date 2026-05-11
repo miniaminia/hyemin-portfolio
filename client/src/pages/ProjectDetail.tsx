@@ -1,44 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
+import { notionBlocks } from "@/data/notionBlocks";
 import NotionRenderer from "@/components/NotionRenderer";
-
-function extractPageId(url: string): string {
-  const match = url.match(/([a-f0-9]{32})/);
-  if (!match) return "";
-  const id = match[1];
-  return `${id.slice(0,8)}-${id.slice(8,12)}-${id.slice(12,16)}-${id.slice(16,20)}-${id.slice(20)}`;
-}
 
 export default function ProjectDetail() {
   const { index } = useParams<{ index: string }>();
   const [, navigate] = useLocation();
-  const [blocks, setBlocks] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
-  const project = portfolioData.projects[Number(index)];
-
-  useEffect(() => {
-    if (!project) { navigate("/"); return; }
-
-    const pageId = extractPageId(project.link);
-    if (!pageId) { setError("페이지 ID를 찾을 수 없습니다."); setLoading(false); return; }
-
-    fetch(`/api/notion/${pageId}`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.error) throw new Error(data.error);
-        setBlocks(data.blocks);
-        setLoading(false);
-      })
-      .catch((e) => {
-        setError(e.message);
-        setLoading(false);
-      });
-  }, [index, project, navigate]);
+  const i = Number(index);
+  const project = portfolioData.projects[i];
+  const blocks = notionBlocks[i] ?? [];
 
   useEffect(() => { window.scrollTo(0, 0); }, [index]);
 
@@ -89,34 +63,22 @@ export default function ProjectDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          {loading && (
-            <div className="flex items-center gap-2 text-[#1f521f] text-xs font-mono py-12">
-              <span>loading content</span>
-              <span className="cursor-blink text-[#00FF62]">█</span>
-            </div>
-          )}
-
-          {error && (
+          {blocks.length === 0 ? (
             <div className="border border-[#1f521f] p-6">
               <p className="text-[#1f521f] text-xs font-mono">
-                <span className="text-red-500">[ERROR]</span> {error}
-              </p>
-              <p className="text-[#1f521f] text-xs font-mono mt-2">
-                &gt; 노션 페이지를 인테그레이션과 공유해주세요.
+                <span className="text-[#E5E7AD]">[INFO]</span> 준비 중인 페이지입니다.
               </p>
             </div>
+          ) : (
+            <NotionRenderer blocks={blocks} />
           )}
-
-          {!loading && !error && <NotionRenderer blocks={blocks} />}
         </motion.div>
 
         {/* Footer prompt */}
-        {!loading && !error && (
-          <div className="mt-12 pt-6 border-t border-[#0d2b0d]">
-            <span className="text-[#1f521f] text-xs font-mono">greymint.kr:~$ </span>
-            <span className="cursor-blink text-[#00FF62] text-sm">█</span>
-          </div>
-        )}
+        <div className="mt-12 pt-6 border-t border-[#0d2b0d]">
+          <span className="text-[#1f521f] text-xs font-mono">greymint.kr:~$ </span>
+          <span className="cursor-blink text-[#00FF62] text-sm">█</span>
+        </div>
       </div>
     </div>
   );
