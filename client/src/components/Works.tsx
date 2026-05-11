@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { useLocation } from "wouter";
+import { ArrowRight } from "lucide-react";
 
 interface Project {
   title: string;
@@ -15,11 +16,12 @@ interface WorksProps {
 
 export default function Works({ projects }: WorksProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [, navigate] = useLocation();
 
   const categories = Array.from(new Set(projects.map((p) => p.category)));
   const filteredProjects = selectedCategory
-    ? projects.filter((p) => p.category === selectedCategory)
-    : projects;
+    ? projects.map((p, i) => ({ ...p, originalIndex: i })).filter((p) => p.category === selectedCategory)
+    : projects.map((p, i) => ({ ...p, originalIndex: i }));
 
   return (
     <section className="py-16 px-4 border-t border-[#1f521f]">
@@ -75,22 +77,20 @@ export default function Works({ projects }: WorksProps) {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {filteredProjects.map((project, index) => (
-            <motion.a
+            <motion.div
               key={`${project.title}-${index}`}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => navigate(`/project/${project.originalIndex}`)}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: (index % 6) * 0.05 }}
               viewport={{ once: true }}
-              className="border border-[#1f521f] hover:border-[#00FF62] transition-all duration-200 group block hover-glitch"
+              className="border border-[#1f521f] hover:border-[#00FF62] transition-all duration-200 group cursor-pointer hover-glitch"
             >
               <div className="bg-[#0d2b0d] px-3 py-1.5 border-b border-[#1f521f] flex items-center justify-between group-hover:bg-[#1f521f] transition-colors duration-200">
                 <span className="text-[#1f521f] text-xs font-mono group-hover:text-[#00FF62] transition-colors">
                   [{project.category.toUpperCase()}]
                 </span>
-                <ExternalLink size={11} className="text-[#1f521f] group-hover:text-[#00FF62] transition-colors" />
+                <ArrowRight size={11} className="text-[#1f521f] group-hover:text-[#00FF62] transition-colors" />
               </div>
               <div className="p-4">
                 <h3 className="text-[#00FF62] text-sm font-mono font-bold mb-2 terminal-glow-sm leading-snug">
@@ -100,7 +100,7 @@ export default function Works({ projects }: WorksProps) {
                   {project.description}
                 </p>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
 
