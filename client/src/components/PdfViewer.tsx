@@ -2,8 +2,13 @@ import { useEffect } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TOTAL_PAGES = 19;
-const getPageUrl = (n: number) => `/portfolio/page-${String(n).padStart(2, "0")}.jpg`;
+const PAGES = [
+  "page-00", "page-01", "page-02", "page-03", "page-04",
+  "page-05", "page-06", "page-07", "page-09", "page-10",
+  "page-11", "page-12", "page-13", "page-14", "page-15",
+  "page-16", "page-17", "page-thanks",
+];
+const getPageUrl = (name: string) => `/portfolio/${name}.png`;
 
 interface PdfViewerProps {
   isOpen: boolean;
@@ -55,15 +60,15 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
             onContextMenu={block}
           >
             <div className="flex flex-col items-center gap-2 w-full max-w-3xl mx-auto px-4">
-              {Array.from({ length: TOTAL_PAGES }, (_, i) => i + 1).map((n) => (
+              {PAGES.map((name, i) => (
                 <img
-                  key={n}
-                  src={getPageUrl(n)}
-                  alt={`포트폴리오 ${n}페이지`}
+                  key={name}
+                  src={getPageUrl(name)}
+                  alt={`포트폴리오 ${i + 1}페이지`}
                   className="w-full block select-none shadow-md shadow-[#1f521f]/20"
                   onContextMenu={block}
                   draggable={false}
-                  loading={n <= 2 ? "eager" : "lazy"}
+                  loading={i < 2 ? "eager" : "lazy"}
                 />
               ))}
             </div>
@@ -71,7 +76,7 @@ export default function PdfViewer({ isOpen, onClose }: PdfViewerProps) {
 
           {/* Footer */}
           <div className="px-4 py-1.5 border-t border-[#1f521f] bg-[#0a0a0a] flex-shrink-0">
-            <span className="text-[#1f521f] text-xs font-mono">[READ-ONLY] portfolio · {TOTAL_PAGES} pages</span>
+            <span className="text-[#1f521f] text-xs font-mono">[READ-ONLY] portfolio · {PAGES.length} pages</span>
           </div>
         </motion.div>
       )}
