@@ -26,7 +26,7 @@ export const projectContent: ProjectContent[] = [
       "교사·관리자 대상 반·그룹 단위 관리 UX 제공",
       "직관적 아이콘 시스템으로 학습 곡선 최소화",
     ],
-    images: ["/projects/0/img-0.png", "/projects/0/img-1.png", "/projects/0/img-2.png", "/projects/0/img-3.png"],
+    images: ["/projects/0/img-0.jpg", "/projects/0/img-1.jpg", "/projects/0/img-2.jpg", "/projects/0/img-3.jpg", "/projects/0/img-4.jpg", "/projects/0/img-5.jpg"],
   },
 
   // 1. 라온시큐어 온리원 뱃지 사이트 구축
@@ -47,7 +47,7 @@ export const projectContent: ProjectContent[] = [
       "각 집단의 직관적·효율적 시스템 사용 환경 구현",
       "복잡한 권한 구조의 SaaS 플랫폼을 명확한 UX로 정리한 사례",
     ],
-    images: ["/projects/1/img-0.png", "/projects/1/img-1.png", "/projects/1/img-2.png", "/projects/1/img-3.png", "/projects/1/img-4.png"],
+    images: ["/projects/1/img-0.jpg", "/projects/1/img-1.jpg", "/projects/1/img-2.jpg", "/projects/1/img-3.jpg", "/projects/1/img-4.jpg", "/projects/1/img-5.jpg", "/projects/1/img-6.jpg", "/projects/1/img-7.jpg", "/projects/1/img-8.jpg", "/projects/1/img-9.jpg"],
   },
 
   // 2. 삼성전자 Global CRM
@@ -110,7 +110,7 @@ export const projectContent: ProjectContent[] = [
       "신한은행·국민은행과의 사업 협력 계약 체결",
       "고객 이탈률 감소 및 앱 사용성에 대한 긍정적 피드백 확보",
     ],
-    images: ["/projects/4/img-0.png"],
+    images: ["/projects/4/img-0.jpg", "/projects/4/img-1.jpg", "/projects/4/img-2.jpg", "/projects/4/img-3.jpg", "/projects/4/img-4.jpg", "/projects/4/img-5.jpg", "/projects/4/img-6.jpg", "/projects/4/img-7.jpg"],
   },
 
   // 5. 삼성전자 글로벌 홀리데이 배너 디자인
@@ -131,7 +131,7 @@ export const projectContent: ProjectContent[] = [
       "글로벌 시장 마케팅 효과 극대화를 위한 홀리데이 캠페인 비주얼 제공",
       "대규모 배너 프로젝트 운영 경험 및 글로벌 협업 역량 강화",
     ],
-    images: ["/projects/5/img-0.png", "/projects/5/img-1.png"],
+    images: ["/projects/5/img-0.jpg", "/projects/5/img-1.jpg", "/projects/5/img-2.jpg", "/projects/5/img-3.jpg"],
   },
 
   // 6. 하나은행 머니수첩
@@ -152,7 +152,7 @@ export const projectContent: ProjectContent[] = [
       "고객사로부터 정보 전달 효율성에 대한 긍정적 피드백 수령",
       "Android·iOS 이중 플랫폼 디자인 PL 경험 확보",
     ],
-    images: ["/projects/6/img-0.jpg", "/projects/6/img-1.jpg"],
+    images: ["/projects/6/img-0.jpg", "/projects/6/img-1.jpg", "/projects/6/img-2.jpg", "/projects/6/img-3.jpg", "/projects/6/img-4.jpg"],
   },
 
   // 7. 미래에셋대우 디지털마케팅 제안
@@ -173,7 +173,7 @@ export const projectContent: ProjectContent[] = [
       "다채널 적용 가능한 모듈형 템플릿 설계로 운영 효율 향상",
       "브랜드 일관성 유지, 디지털 환경에 최적화된 디자인 완성",
     ],
-    images: ["/projects/7/img-0.jpg", "/projects/7/img-1.jpg"],
+    images: ["/projects/7/img-0.jpg", "/projects/7/img-1.jpg", "/projects/7/img-2.jpg", "/projects/7/img-3.jpg", "/projects/7/img-4.jpg"],
   },
 
   // 8. 이케아 뉴스레터
@@ -278,7 +278,7 @@ export const projectContent: ProjectContent[] = [
       "스케치→피그마 전환으로 파일 관리 효율성·팀 협업 속도 향상",
       "일관된 디자인 시스템으로 서비스 전반 브랜드 통일성 강화",
     ],
-    images: ["/projects/12/img-0.png", "/projects/12/img-1.png", "/projects/12/img-2.png", "/projects/12/img-3.png"],
+    images: ["/projects/12/img-0.jpg", "/projects/12/img-1.jpg", "/projects/12/img-2.jpg", "/projects/12/img-3.jpg", "/projects/12/img-4.jpg", "/projects/12/img-5.jpg"],
   },
 
   // 13. 아큐브 큐브 로얄티프로그램
@@ -320,7 +320,7 @@ export const projectContent: ProjectContent[] = [
       "콘텐츠 탐색 편의성 향상으로 체류 시간 증가 기대",
       "브랜드 이미지 현대화 및 신규 사용자 유입 환경 개선",
     ],
-    images: ["/projects/14/img-0.png", "/projects/14/img-1.png", "/projects/14/img-2.png"],
+    images: ["/projects/14/img-0.jpg", "/projects/14/img-1.jpg", "/projects/14/img-2.jpg"],
   },
 
   // 15. KB 손해보험 뉴스레터 리뉴얼
@@ -341,7 +341,7 @@ export const projectContent: ProjectContent[] = [
       "모듈화 템플릿으로 5년간 뉴스레터 효율적 운영",
       "업계 트렌드를 선도한 뉴스레터 리뉴얼 완성",
     ],
-    images: ["/projects/15/img-0.jpg", "/projects/15/img-1.jpg"],
+    images: ["/projects/15/img-0.jpg", "/projects/15/img-1.jpg", "/projects/15/img-2.jpg", "/projects/15/img-3.jpg", "/projects/15/img-4.jpg", "/projects/15/img-5.jpg"],
   },
 
   // 16. LIG 손해보험 계약고객 이벤트
@@ -531,5 +531,66 @@ export const projectContent: ProjectContent[] = [
       "UX/UI 교육 분야 강의·멘토링 역량 검증",
     ],
     images: [],
+  },
+
+  // 25. 콴텍 큐오스크/IRA
+  {
+    overview: "콴텍 솔루션 기반 큐오스크와 아이라(IRA) 버전 디자인. 온라인 SaaS 앱의 자산관리 콘텐츠를 오프라인 디바이스 환경에 맞게 변주하여, 지점 키오스크와 상담 태블릿 양쪽에서 동일한 서비스를 제공.",
+    goals: [
+      "큐오스크: 지점 방문 고객이 짧은 시간 안에 서비스를 체험할 수 있도록 대화면·단순 단계 중심 UI 설계",
+      "아이라: 상담원과 고객이 함께 자산 데이터를 확인할 수 있도록 터치 기반 인터랙션·상담 지원 기능 강화",
+      "공통 콘텐츠를 기반으로 디바이스별 사용 맥락에 맞는 레이아웃·네비게이션·UI 패턴으로 최적화",
+    ],
+    solution: [
+      "앱 중심 화면 구조를 그대로 적용하면 사용성이 떨어져 디바이스별 UX를 별도 재구성",
+      "큐오스크는 큰 버튼과 직관적 플로우로 초보자도 쉽게 이용 가능하도록 설계",
+      "아이라는 상담 현장에 필요한 세부 데이터와 인터랙션 요소 강화로 업무 효율 향상",
+    ],
+    results: [
+      "SaaS 앱에서 확장된 콘텐츠를 큐오스크·아이라에 맞게 구현, 옴니채널 금융 경험 완성",
+      "고객이 어떤 접점에서도 일관된 브랜드 경험 제공",
+      "금융기관 오프라인 채널에서도 디지털 자산관리 서비스 제공 가능",
+    ],
+    images: ["/projects/25/img-0.jpg", "/projects/25/img-1.jpg", "/projects/25/img-2.jpg", "/projects/25/img-3.jpg"],
+  },
+
+  // 26. 하나은행 CMS
+  {
+    overview: "KEB 하나은행 기업뱅킹 웹 CMS 사이트 디자인. 기업 고객이 내부에서 업무·스케줄을 효율적으로 관리할 수 있도록 직관적이고 일관성 있는 UI 설계.",
+    goals: [
+      "스케줄 관리 기능을 직관적으로 배치하여 업무 흐름을 빠르게 파악할 수 있도록 설계",
+      "중요한 정보와 액션 버튼을 눈에 잘 띄게 배치, 업무 진행 효율 향상",
+      "내부 프로그램에 맞는 미니멀하고 통일성 있는 비주얼 구현",
+    ],
+    solution: [
+      "내부 프로그램 특성에 맞게 과도한 장식 없이 미니멀하고 직관적인 레이아웃 구성",
+      "사용자 경험 중심의 메뉴 구성과 캘린더 일정 관리 기능으로 CMS 복잡성 최소화",
+    ],
+    results: [
+      "CMS 사용자의 업무 일정 직관적 관리 가능, 업무 효율성 향상",
+      "편리하고 명확한 UI에 대한 고객사 긍정적 피드백 수령",
+    ],
+    images: ["/projects/26/img-0.jpg", "/projects/26/img-1.jpg"],
+  },
+
+  // 27. 롯데카드 앱 이벤트 운영
+  {
+    overview: "롯데카드 웹앱 디지로카 이벤트 운영 디자인. 반복되는 프로모션 속에서 브랜드 톤앤매너의 일관성을 유지하면서도 사용자에게 새로운 시각적 경험을 제공.",
+    goals: [
+      "반복되는 프로모션 속에서도 차별화된 시각 경험 제공",
+      "3D 오브제 활용을 통한 메타포 중심의 직관적 비주얼 구현",
+      "프로모션 주제를 명확하고 효과적으로 전달할 수 있는 그래픽 강화",
+      "브랜드 아이덴티티와 톤앤매너를 유지한 디자인 적용",
+    ],
+    solution: [
+      "단순 쿠폰 이미지 중심에서 3D 오브제 메타포로 전환, 프로모션 주제 표현력 강화",
+      "각 프로모션 주제에 맞는 맞춤형 그래픽과 공통 디자인 가이드라인 병행 적용",
+    ],
+    results: [
+      "프로모션 메시지의 직관적 전달력 향상 및 사용자 경험 개선",
+      "이벤트 참여율 향상 효과 확인, 시각적 품질 개선 입증",
+      "디지로카 앱 이벤트의 브랜드 정체성 유지와 신선한 사용자 경험 제공",
+    ],
+    images: ["/projects/27/img-0.jpg", "/projects/27/img-1.jpg", "/projects/27/img-2.jpg", "/projects/27/img-3.jpg", "/projects/27/img-4.jpg", "/projects/27/img-5.jpg"],
   },
 ];

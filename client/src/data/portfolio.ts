@@ -220,6 +220,24 @@ export const portfolioData = {
       category: "Consulting",
       description: "디자인 교육 프로젝트 진행",
       link: "https://greymint100.notion.site/1f3320de54138067b2d8c4f6a4ca3fd1?pvs=25"
+    },
+    {
+      title: "콴텍 큐오스크/IRA",
+      category: "App",
+      description: "자산관리 키오스크 및 IRA 태블릿 UI/UX 디자인",
+      link: ""
+    },
+    {
+      title: "하나은행 CMS",
+      category: "Platform",
+      description: "기업뱅킹 웹 CMS 시스템 UI/UX 설계",
+      link: ""
+    },
+    {
+      title: "롯데카드 앱 이벤트 운영",
+      category: "App",
+      description: "디지로카 앱 이벤트 프로모션 디자인",
+      link: ""
     }
   ]
 };
