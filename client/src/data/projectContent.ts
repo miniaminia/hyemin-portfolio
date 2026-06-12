@@ -68,7 +68,7 @@ export const projectContent: ProjectContent[] = [
       "포토샵 레이어 관리 체계 구축으로 유사 작업 효율 향상",
       "글로벌 다국어 뉴스레터 운영 경험 확보",
     ],
-    images: ["/projects/2/img-0.png", "/projects/2/img-1.png"],
+    images: ["/projects/2/img-1.png"],
   },
 
   // 3. 한국투자 저축은행 이벤트 제안
