@@ -89,7 +89,7 @@ export const projectContent: ProjectContent[] = [
       "신규 브랜드 이미지 수립을 위한 비주얼 방향성 제시",
       "B2C 커뮤니케이션 전환 제안 작업 완료",
     ],
-    images: ["/projects/3/img-0.png"],
+    images: ["/projects/3/img-0.png", "/projects/3/img-1.png"],
   },
 
   // 4. 콴텍 머니포트 앱
