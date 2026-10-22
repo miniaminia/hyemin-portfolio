@@ -6,7 +6,6 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
-import { StructuredData } from "./components/StructuredData";
 
 
 function Router() {
@@ -29,7 +28,6 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <StructuredData />
       <ThemeProvider
         defaultTheme="light"
         // switchable
